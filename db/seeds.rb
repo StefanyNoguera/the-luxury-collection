@@ -89,3 +89,4 @@ puts "Finished creating #{Seller.count} Sellers..."
 # SELLERS SEEDS
 
 require_relative 'product_seeds'
+require_relative 'review_seeds'
