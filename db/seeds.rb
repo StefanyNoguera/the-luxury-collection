@@ -18,7 +18,7 @@ puts "Creating Users..."
     first_name: first_name,
     last_name: last_name,
     username: "#{first_name.downcase}#{last_name.downcase}",
-    email: "#{first_name.downcase}@gmail.com",
+    email: Faker::Internet.safe_email,
     password: "123456"
   )
 end
