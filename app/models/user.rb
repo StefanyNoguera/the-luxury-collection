@@ -10,5 +10,5 @@ class User < ApplicationRecord
   has_many :reviews
   has_one :seller, dependent: :destroy
   has_many :orders
-  # has_one_attached :photo
+  has_one_attached :photo
 end
