@@ -4,4 +4,5 @@ class Product < ApplicationRecord
   belongs_to :condition
   has_one :order
   belongs_to :seller
+  has_many :wishlists, dependent: :destroy
 end

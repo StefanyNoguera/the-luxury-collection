@@ -91,6 +91,7 @@ puts "Finished creating #{Seller.count} Sellers..."
 
 # PRODUCTS SEEDS
 require_relative 'product_seeds'
+# PRODUCTS SEEDS
 
 # REVIEWS SEEDS
 puts "Cleaning Reviews..."
@@ -110,3 +111,22 @@ Product.all.each do |product|
 end
 puts "Finished creating #{Review.count} Reviews..."
 # REVIEWS SEEDS
+
+# WISHLISTS SEEDS
+puts "Cleaning Wishlists..."
+Wishlist.destroy_all
+
+puts "Creating Wishlists..."
+
+User.all.each do |user|
+  3.times do
+    Wishlist.create(
+      product_id: Product.all.sample.id,
+      user_id: user.id
+    )
+  end
+end
+puts "Finished creating #{Wishlist.count} Wishlists..."
+# WISHLISTS SEEDS
+
+# ORDERS SEEDS
