@@ -1,1 +1,74 @@
 // Specific CSS for your home-page
+.banner {
+  margin: 0;
+  padding: 0;
+  height: 81vh;
+  background-image: url("banner-img.jpg");
+  background-size: cover;
+}
+
+.categories {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin: 1.5em;
+}
+
+.centered-title {
+  display: flex;
+  justify-content: center;
+  margin: 1.5em;
+}
+
+.img-style {
+  height: 18vw;
+  width: 22vw;
+  object-fit: cover;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  border: none;
+}
+
+.section-2 {
+  margin: 0;
+  padding: 0;
+  height: 65vh;
+  background-image: url("section-2-img.jpg");
+  background-size: cover;
+  overflow:auto;
+  display: flex;
+  align-items: flex-end;
+}
+
+.white-background {
+  height: 46%;
+  width: 20em;
+  background-color: white;
+  z-index: 1;
+  position:relative;
+  margin: 2em;
+  padding-top: 1.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.img-style-3 {
+  height: 22vw;
+  width: 30vw;
+  object-fit: cover;
+}
+
+.small-width {
+  display: flex;
+  justify-content: center;
+  width: 8em;
+}
