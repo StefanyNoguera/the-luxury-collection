@@ -88,5 +88,25 @@ end
 puts "Finished creating #{Seller.count} Sellers..."
 # SELLERS SEEDS
 
+
+# PRODUCTS SEEDS
 require_relative 'product_seeds'
-require_relative 'review_seeds'
+
+# REVIEWS SEEDS
+puts "Cleaning Reviews..."
+Review.destroy_all
+
+puts "Creating Reviews..."
+
+Product.all.each do |product|
+  3.times do
+    Review.create(
+      rating: rand(1..5),
+      comment: Faker::Lorem.paragraph,
+      product_id: product.id,
+      user_id: User.all.sample.id
+    )
+  end
+end
+puts "Finished creating #{Review.count} Reviews..."
+# REVIEWS SEEDS
