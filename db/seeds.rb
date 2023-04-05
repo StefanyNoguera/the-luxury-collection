@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+require 'open-uri'
+
 puts "Cleaning Users..."
 User.destroy_all
 
@@ -21,6 +23,8 @@ puts "Creating Users..."
     email: Faker::Internet.safe_email,
     password: "123456"
   )
+  # file = URI.open('https://thispersondoesnotexist.com/image')
+  # user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 end
 puts "Finished creating #{User.count} Users..."
 
@@ -76,22 +80,22 @@ User.limit(3).each do |user|
 end
 puts "Finished creating #{Seller.count} Sellers..."
 
-puts "Cleaning Products..."
-Product.destroy_all
+# puts "Cleaning Products..."
+# Product.destroy_all
 
-puts "Creating Products..."
+# puts "Creating Products..."
 
-Seller.all.each do |seller|
-  10.times do
-    Product.create(
-      name: Faker::Commerce.product_name,
-      brand: Faker::Company.name,
-      description: Faker::Lorem.paragraph,
-      price: Faker::Commerce.price,
-      size: Faker::Number.between(from: 0, to: 10),
-      category_id: Category.all.sample.id,
-      condition_id: Condition.all.sample.id,
-      seller_id: user.seller.id
-    )
-  end
-end
+# Seller.all.each do |seller|
+#   10.times do
+#     Product.create(
+#       name: Faker::Commerce.product_name,
+#       brand: Faker::Company.name,
+#       description: Faker::Lorem.paragraph,
+#       price: Faker::Commerce.price,
+#       size: Faker::Number.between(from: 0, to: 10),
+#       category_id: Category.all.sample.id,
+#       condition_id: Condition.all.sample.id,
+#       seller_id: user.seller.id
+#     )
+#   end
+# end
