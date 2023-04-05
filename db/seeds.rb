@@ -8,6 +8,7 @@
 
 require 'open-uri'
 
+# USERS SEEDS
 puts "Cleaning Users..."
 User.destroy_all
 
@@ -23,11 +24,13 @@ puts "Creating Users..."
     email: Faker::Internet.safe_email,
     password: "123456"
   )
-  file = URI.open('https://thispersondoesnotexist.com/image')
-  user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+  # file = URI.open('https://thispersondoesnotexist.com/image')
+  # user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 end
 puts "Finished creating #{User.count} Users..."
+# USERS SEEDS
 
+# CONDITIONS SEEDS
 puts "Cleaning Conditions..."
 Condition.destroy_all
 
@@ -54,7 +57,9 @@ Condition.create(
   description: "The item has never been worn or used, and is in pristine condition."
 )
 puts "Finished creating #{Condition.count} Conditions..."
+# CONDITIONS SEEDS
 
+# CATEGORIES SEEDS
 puts "Cleaning Categories..."
 Category.destroy_all
 
@@ -66,7 +71,9 @@ Category.create(name: "Shoes")
 Category.create(name: "Jewelry")
 Category.create(name: "Bags")
 puts "Finished creating #{Category.count} Categories..."
+# CATEGORIES SEEDS
 
+# SELLERS SEEDS
 puts "Cleaning Sellers..."
 Seller.destroy_all
 
@@ -79,23 +86,6 @@ User.limit(3).each do |user|
   )
 end
 puts "Finished creating #{Seller.count} Sellers..."
+# SELLERS SEEDS
 
-# puts "Cleaning Products..."
-# Product.destroy_all
-
-# puts "Creating Products..."
-
-# Seller.all.each do |seller|
-#   10.times do
-#     Product.create(
-#       name: Faker::Commerce.product_name,
-#       brand: Faker::Company.name,
-#       description: Faker::Lorem.paragraph,
-#       price: Faker::Commerce.price,
-#       size: Faker::Number.between(from: 0, to: 10),
-#       category_id: Category.all.sample.id,
-#       condition_id: Condition.all.sample.id,
-#       seller_id: user.seller.id
-#     )
-#   end
-# end
+require_relative 'product_seeds'
