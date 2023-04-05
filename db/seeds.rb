@@ -50,3 +50,15 @@ Condition.create(
   description: "The item has never been worn or used, and is in pristine condition."
 )
 puts "Finished creating #{Condition.count} Conditions..."
+
+puts "Cleaning Categories..."
+Category.destroy_all
+
+puts "Creating Categories..."
+
+Category.create(name: "Tops")
+Category.create(name: "Bottoms")
+Category.create(name: "Shoes")
+Category.create(name: "Jewelry")
+Category.create(name: "Bags")
+puts "Finished creating #{Category.count} Categories..."
