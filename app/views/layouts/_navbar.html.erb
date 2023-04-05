@@ -9,7 +9,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto small-font">
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Home", "#", class: "nav-link small-font" %>
@@ -26,13 +26,13 @@
           </li>
         <% else %>
           <li>
-            <%= link_to "Login", new_user_session_path, class: "small-font no-deco" %>
+            <%= link_to "LOGIN", new_user_session_path, class: "small-font" %>
           <li>
         <% end %>
       </ul>
     </div>
   </div>
 </div>
-<div class="container-fluid no-margin">
+<div class="container-fluid">
   <hr>
 </div>
