@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_04_182922) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_04_192423) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,57 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_04_182922) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "conditions", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "product_id"
+    t.index ["product_id"], name: "index_orders_on_product_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "description"
+    t.integer "price"
+    t.string "size"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.bigint "condition_id"
+    t.bigint "seller_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["condition_id"], name: "index_products_on_condition_id"
+    t.index ["seller_id"], name: "index_products_on_seller_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "product_id"
+    t.index ["product_id"], name: "index_reviews_on_product_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "sellers", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "users_id"
+    t.index ["users_id"], name: "index_sellers_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -36,4 +87,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_04_182922) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "wishlists", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "product_id"
+    t.index ["product_id"], name: "index_wishlists_on_product_id"
+    t.index ["user_id"], name: "index_wishlists_on_user_id"
+  end
+
+  add_foreign_key "orders", "products"
+  add_foreign_key "orders", "users"
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "conditions"
+  add_foreign_key "products", "sellers"
+  add_foreign_key "reviews", "products"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "sellers", "users", column: "users_id"
+  add_foreign_key "wishlists", "products"
+  add_foreign_key "wishlists", "users"
 end
