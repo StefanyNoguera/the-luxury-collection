@@ -4,10 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :wishlists
-  has_many :wishlists
-  has_many :reviews
-  has_many :reviews
-  has_one :seller
+  has_many :wishlists, dependent: :destroy
+  has_many :reviews, dependent: :destroy
+  has_one :seller, dependent: :destroy
   has_many :orders
+  has_one_attached :photo
 end
