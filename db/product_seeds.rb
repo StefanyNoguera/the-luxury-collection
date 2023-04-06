@@ -6,7 +6,7 @@ puts "Creating Products..."
 
 # CREATE 2 PRODUCTS FOR EACH CATEGORY FOR THE FIRST USER
 Product.create(
-  name: "Vintage Gucci Bag",
+  name: "Vintage Bag",
   brand: "Gucci",
   description: "Vintage Gucci bag in excellent condition. Comes with dust bag.",
   price: 1000,
@@ -17,7 +17,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Vintage Louis Vuitton Bag",
+  name: "Vintage Bag",
   brand: "Louis Vuitton",
   description: "Vintage Louis Vuitton bag in very good condition. Comes with dust bag.",
   price: 800,
@@ -28,7 +28,7 @@ Product.create(
 )
 
 Product.create(
-  name: "New Rick Owens High Heel",
+  name: "New High Heel",
   brand: "Rick Owens",
   description: "New Rick Owens High Heel. Comes with box and dust bag.",
   price: 1700,
@@ -39,7 +39,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Used Vivienne Westwood High Heel",
+  name: "Used High Heel",
   brand: "Vivienne Westwood",
   description: "Used Vivienne Westwood High Heel. Comes with box and dust bag.",
   price: 500,
@@ -50,7 +50,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Vintage Louis Vuitton Trouser",
+  name: "Vintage Trouser",
   brand: "Louis Vuitton",
   description: "Vintage Louis Vuitton Trouser in excellent condition. Comes with box and dust bag.",
   price: 700,
@@ -61,7 +61,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Very Used Gucci Skirt",
+  name: "Very Used Skirt",
   brand: "Gucci",
   description: "Very Used Gucci Skirt in fair condition. Comes with box and dust bag.",
   price: 200,
@@ -72,7 +72,7 @@ Product.create(
 )
 
 Product.create(
-  name: "New Rick Owens Sheer Shirt",
+  name: "New Sheer Shirt",
   brand: "Rick Owens",
   description: "New Rick Owens Sheer Shirt. Comes with box and dust bag.",
   price: 200,
@@ -83,7 +83,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Used Vivienne Westwood Blouse",
+  name: "Used Blouse",
   brand: "Vivienne Westwood",
   description: "Used Vivienne Westwood Blouse. Comes with box and dust bag.",
   price: 300,
@@ -94,7 +94,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Vintage Louis Vuitton Necklace",
+  name: "Vintage Necklace",
   brand: "Louis Vuitton",
   description: "Vintage Louis Vuitton Necklace in excellent condition. Comes with box and dust bag.",
   price: 500,
@@ -105,7 +105,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Very Used Gucci Earrings",
+  name: "Very Used Earrings",
   brand: "Gucci",
   description: "Very Used Gucci Earrings in fair condition. Comes with box and dust bag.",
   price: 100,
@@ -119,7 +119,7 @@ puts "Finished creating #{Product.count} Products..."
 
 # CREATE 2 PRODUCTS FOR EACH CATEGORY FOR THE SECOND USER
 Product.create(
-  name: "Vintage Gucci Blue Bag",
+  name: "Vintage Blue Bag",
   brand: "Gucci",
   description: "Vintage Gucci bag in excellent condition. Comes with dust bag.",
   price: 1000,
@@ -130,7 +130,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Vintage Louis Vuitton Red Bag",
+  name: "Vintage Red Bag",
   brand: "Louis Vuitton",
   description: "Vintage Louis Vuitton bag in very good condition. Comes with dust bag.",
   price: 800,
@@ -141,7 +141,7 @@ Product.create(
 )
 
 Product.create(
-  name: "New Rick Owens Black High Heel",
+  name: "New Black High Heel",
   brand: "Rick Owens",
   description: "New Rick Owens High Heel. Comes with box and dust bag.",
   price: 1700,
@@ -152,7 +152,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Used Vivienne Westwood Red High Heel",
+  name: "Used Red High Heel",
   brand: "Vivienne Westwood",
   description: "Used Vivienne Westwood High Heel. Comes with box and dust bag.",
   price: 500,
@@ -163,7 +163,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Vintage Louis Vuitton Black Trouser",
+  name: "Vintage Black Trouser",
   brand: "Louis Vuitton",
   description: "Vintage Louis Vuitton Trouser in excellent condition. Comes with box and dust bag.",
   price: 700,
@@ -174,7 +174,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Very Used Gucci Black Skirt",
+  name: "Very Used Black Skirt",
   brand: "Gucci",
   description: "Very Used Gucci Skirt in fair condition. Comes with box and dust bag.",
   price: 200,
@@ -185,7 +185,7 @@ Product.create(
 )
 
 Product.create(
-  name: "New Rick Owens White Sheer Shirt",
+  name: "New White Sheer Shirt",
   brand: "Rick Owens",
   description: "New Rick Owens Sheer Shirt. Comes with box and dust bag.",
   price: 200,
@@ -196,7 +196,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Used Vivienne Westwood White Blouse",
+  name: "Used White Blouse",
   brand: "Vivienne Westwood",
   description: "Used Vivienne Westwood Blouse. Comes with box and dust bag.",
   price: 300,
@@ -207,7 +207,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Vintage Louis Vuitton Necklace",
+  name: "Vintage Necklace",
   brand: "Louis Vuitton",
   description: "Vintage Louis Vuitton Necklace in excellent condition. Comes with box and dust bag.",
   price: 500,
@@ -218,7 +218,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Vintage Gucci Earrings",
+  name: "Vintage Earrings",
   brand: "Gucci",
   description: "Vintage Gucci Earrings in excellent condition. Comes with box and dust bag.",
   price: 500,
@@ -231,7 +231,7 @@ puts "Finished creating #{Product.count} Products..."
 
 # CREATE 2 PRODUCTS FOR EACH CATEGORY FOR THE THIRD USER
 Product.create(
-  name: "Vintage Gucci Blue Bag",
+  name: "Vintage Blue Bag",
   brand: "Gucci",
   description: "Vintage Gucci bag in excellent condition. Comes with dust bag.",
   price: 1000,
@@ -242,7 +242,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Vintage Louis Vuitton Red Bag",
+  name: "Vintage Red Bag",
   brand: "Louis Vuitton",
   description: "Vintage Louis Vuitton bag in very good condition. Comes with dust bag.",
   price: 800,
@@ -253,7 +253,7 @@ Product.create(
 )
 
 Product.create(
-  name: "New Rick Owens Black High Heel",
+  name: "New Black High Heel",
   brand: "Rick Owens",
   description: "New Rick Owens High Heel. Comes with box and dust bag.",
   price: 1700,
@@ -264,7 +264,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Used Vivienne Westwood Red Sneaker",
+  name: "Used Red Sneaker",
   brand: "Vivienne Westwood",
   description: "Used Vivienne Westwood Sneaker. Comes with box and dust bag.",
   price: 500,
@@ -275,7 +275,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Vintage Louis Vuitton Black Trouser",
+  name: "Vintage Black Trouser",
   brand: "Louis Vuitton",
   description: "Vintage Louis Vuitton Trouser in excellent condition. Comes with box and dust bag.",
   price: 700,
@@ -286,7 +286,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Very Used Gucci Black Skirt",
+  name: "Very Used Black Skirt",
   brand: "Gucci",
   description: "Very Used Gucci Skirt in fair condition. Comes with box and dust bag.",
   price: 200,
@@ -297,7 +297,7 @@ Product.create(
 )
 
 Product.create(
-  name: "New Rick Owens White Sheer Shirt",
+  name: "New White Sheer Shirt",
   brand: "Rick Owens",
   description: "New Rick Owens Sheer Shirt. Comes with box and dust bag.",
   price: 200,
@@ -308,7 +308,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Used Vivienne Westwood White Blouse",
+  name: "Used White Blouse",
   brand: "Vivienne Westwood",
   description: "Used Vivienne Westwood Blouse. Comes with box and dust bag.",
   price: 100,
@@ -319,7 +319,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Vintage Vivienne Westwood Necklace",
+  name: "Vintage Necklace",
   brand: "Vivienne Westwood",
   description: "Vintage Vivienne Westwood Necklace in excellent condition. Comes with box and dust bag.",
   price: 500,
@@ -330,7 +330,7 @@ Product.create(
 )
 
 Product.create(
-  name: "Vintage Gucci Earrings",
+  name: "Vintage Earrings",
   brand: "Gucci",
   description: "Vintage Gucci Earrings in excellent condition. Comes with box and dust bag.",
   price: 500,
