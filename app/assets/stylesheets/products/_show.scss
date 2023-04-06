@@ -1,0 +1,26 @@
+.product-show {
+  height: 60vh;
+  max-width: 80vh;
+}
+
+.show-container {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.padding-right {
+  padding-top: 0.5rem;
+  padding-right: 4.5rem;
+}
+
+.padding-left {
+  padding-top: 0.5rem;
+  padding-left: 4.5rem;
+}
+
