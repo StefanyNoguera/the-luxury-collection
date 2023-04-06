@@ -9,9 +9,10 @@
 require 'open-uri'
 
 # USERS SEEDS
+
 puts "Cleaning Users..."
 User.destroy_all
-
+puts "#{User.count} Users..."
 puts "Creating Users..."
 
 10.times do
@@ -31,9 +32,9 @@ puts "Finished creating #{User.count} Users..."
 # USERS SEEDS
 
 # CONDITIONS SEEDS
+
 puts "Cleaning Conditions..."
 Condition.destroy_all
-
 puts "Creating Conditions..."
 
 Condition.create(
@@ -60,9 +61,9 @@ puts "Finished creating #{Condition.count} Conditions..."
 # CONDITIONS SEEDS
 
 # CATEGORIES SEEDS
+
 puts "Cleaning Categories..."
 Category.destroy_all
-
 puts "Creating Categories..."
 
 Category.create(name: "Tops")
@@ -76,7 +77,6 @@ puts "Finished creating #{Category.count} Categories..."
 # SELLERS SEEDS
 puts "Cleaning Sellers..."
 Seller.destroy_all
-
 puts "Creating Sellers..."
 
 User.limit(3).each do |user|
@@ -96,7 +96,6 @@ require_relative 'product_seeds'
 # REVIEWS SEEDS
 puts "Cleaning Reviews..."
 Review.destroy_all
-
 puts "Creating Reviews..."
 
 Product.all.each do |product|
@@ -115,7 +114,6 @@ puts "Finished creating #{Review.count} Reviews..."
 # WISHLISTS SEEDS
 puts "Cleaning Wishlists..."
 Wishlist.destroy_all
-
 puts "Creating Wishlists..."
 
 User.all.each do |user|
@@ -129,4 +127,17 @@ end
 puts "Finished creating #{Wishlist.count} Wishlists..."
 # WISHLISTS SEEDS
 
-# ORDERS SEEDS
+# # ORDERS SEEDS
+# puts "Cleaning Orders..."
+# Order.destroy_all
+# puts "Creating Orders..."
+# User.all.each do |user|
+#   3.times do
+#     Order.create(
+#       product_id: Product.all.sample.id,
+#       user_id: user.id
+#     )
+#   end
+# end
+# puts "Finished creating #{Order.count} Orders..."
+# # ORDERS SEEDS
