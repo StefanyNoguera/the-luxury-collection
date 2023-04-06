@@ -1,7 +1,7 @@
 # PRODUCT SEEDS
+
 puts "Cleaning Products..."
 Product.destroy_all
-
 puts "Creating Products..."
 
 # CREATE 2 PRODUCTS FOR EACH CATEGORY FOR THE FIRST USER
