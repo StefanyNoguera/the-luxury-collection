@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <%= render partial: "layouts/categories_banner" %>
+
+  <div class="show-container">
+    <div class="padding-left">
+      <div class="flex-end">
+        <i class="fa-regular fa-heart heart"></i>
+      </div>
+      <%= image_tag("image-7.jpg", class: "product-show pb-4") %>
+    </div>
+
+    <div class="padding-right">
+      <h1 class="big-font"><%= @product.name %></h1>
+    </div>
+  </div>
+</div>
