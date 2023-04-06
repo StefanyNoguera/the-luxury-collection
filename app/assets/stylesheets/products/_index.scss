@@ -1,4 +1,4 @@
-.cards {
+.index-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -7,14 +7,24 @@
 }
 
 .index-card {
-  width: 23%;
+  width: 19%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .img-product {
-  height: 23vw;
-  width: 23vw;
+  height: 19vw;
+  width: 19vw;
   object-fit: cover;
+  background-image: url("gucci-card.jpg");
+  margin-bottom: 0.5em;
+}
+
+.heart {
+  top: 0;
+  right: 0;
+  font-size: 1.5em;
+  margin: 0.5em;
+  color: rgb(174, 15, 15);
 }

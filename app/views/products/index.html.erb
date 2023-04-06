@@ -5,13 +5,20 @@
     <h1 class="big-font centered-title">ALL</h1>
   </div>
 
-  <div class="cards">
+  <div class="index-cards">
     <% @products.each do |product| %>
       <div class="index-card">
         <%# <%= image_tag product.photo, :class => "img-style pb-4" %>
-        <%= image_tag "gucci-card.jpg", :class => "img-product pb-3" %>
-        <p class="bold-medium-font mb-2"><%=link_to product.brand, product_path(product)%></p>
-        <p class="small-font"><%=link_to product.name, product_path(product)%></p>
+        <div class="img-product">
+          <i class="fa-regular fa-heart heart"></i>
+          <%# <%= image_tag "gucci-card.jpg", class: "img-product pb-3" %>
+        </div>
+        <p class="bold-small-font mb-2"><%=link_to product.name, product_path(product)%></p>
+        <p class="smaller-font mb-1"><%=link_to product.brand, product_path(product)%></p>
+        <%# interpolate size of the product without link_to%>
+        <p class="smaller-font mb-1">Size <%=product.size%></p>
+        <p class="bold-smaller-font mb-3"><%=product.price%>$</p>
+
       </div>
     <% end %>
 </div>
