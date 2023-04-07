@@ -6,7 +6,8 @@
 .show-container {
   display: flex;
   justify-content: space-between;
-
+  align-items: center;
+  padding-top: 2em;
 }
 
 .flex-end {
@@ -17,10 +18,10 @@
 .padding-right {
   padding-top: 0.5rem;
   padding-right: 4.5rem;
+  padding-left: 7em;
 }
 
 .padding-left {
-  padding-top: 0.5rem;
-  padding-left: 4.5rem;
+  padding-top: 0.5rem;  
+  padding-left: 14.5rem;
 }
-
