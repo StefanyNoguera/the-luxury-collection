@@ -10,7 +10,27 @@
     </div>
 
     <div class="padding-right">
-      <h1 class="big-font"><%= @product.name %></h1>
+      <div class="pb-5">
+        <h1 class="big-font"><%= @product.name %></h1>
+        <h1 class="medium-font"><%= link_to @product.brand, "" %></h1>
+        <h1 class="medium-font">Size: <%=@product.size %></h1>
+        <h1 class="bold-medium-font"><%=@product.price %>$</h1>
+      </div>
+      <div class="pb-5">
+        <h1 class="bold-medium-font">DESCRIPTION</h1>
+        <h1 class="small-font"><%= @product.description %></h1>
+      </div>
+      <div class="pb-5">
+        <h1 class="bold-medium-font">CONDITION</h1>
+
+        <h1 class="medium-font"><%= @product.condition.name %></h1>
+      </div>
+      <div class="pb-5">
+        <h1 class="small-font">by <%= link_to @product.seller.user.username, "" %></h1>
+      </div>
+      <div>
+        <p class="black-btn white-medium-font"><%= link_to "BUY NOW", ""%></p>
+      </div>
     </div>
   </div>
 </div>
