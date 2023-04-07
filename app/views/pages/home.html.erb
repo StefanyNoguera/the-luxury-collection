@@ -63,11 +63,13 @@
   </div>
 
   <div class="section-4 pt-5">
-    <%= image_tag "guy-portrait.jpg", :class => "img_circle center-item " %>
-    <p class="big-font center-item pt-3">TYRONE WEST</p>
-    <p class="medium-font center-item">Selling with The Luxury Collection since 2018</p>
-    <p class="small-font center-item">"The Luxury Collection is a fantastic platform for luxury clothing sellers. The customers are engaged and receptive and the platform is user-friendly. Thank you for providing such a great service."</p>
-    <p class="bold-medium-font center-item">JOIN THE COMMUNITY</p>
-    <p class="small-link center-item"><%=link_to "SELL WITH US", ""%></p>
+    <div class="review-sec">
+      <%= image_tag "guy-portrait.jpg", :class => "img_circle center-item " %>
+      <p class="big-font center-item pt-3">TYRONE WEST</p>
+      <p class="medium-font center-item">Selling with The Luxury Collection since 2018</p>
+      <p class="small-font center-item">"The Luxury Collection is a fantastic platform for luxury clothing sellers. The customers are engaged and receptive and the platform is user-friendly. Thank you for providing such a great service."</p>
+      <p class="bold-medium-font center-item">JOIN THE COMMUNITY</p>
+      <p class="small-link center-item"><%=link_to "SELL WITH US", new_user_registration_path %></p>
+    </div>
   </div>
 </div>

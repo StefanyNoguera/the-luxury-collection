@@ -44,7 +44,7 @@
   height: 65vh;
   background-image: url("section-2-img.jpg");
   background-size: cover;
-  overflow:auto;
+  overflow: auto;
   display: flex;
   align-items: flex-end;
 }
@@ -81,15 +81,25 @@
 }
 
 .section-4 {
-  width: 50vw;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   margin: 0;
 }
+
+.review-sec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 50vw;
+}
+
 .center-item {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */ /* remove this */
+  align-items: center;
 }
 
 .justify-text {
