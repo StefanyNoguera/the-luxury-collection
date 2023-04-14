@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :products, only: [:index, :show] do
     resources :orders, only: [:create, :new]
+    resources :wishlists, only: [:create, :new]
   end
   resources :users, only: [:show, :destroy]
 end

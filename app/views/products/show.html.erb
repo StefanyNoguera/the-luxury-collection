@@ -4,10 +4,14 @@
   <div class="show-container">
     <div class="padding-left">
       <div class="flex-end">
-        <i class="fa-regular fa-heart heart"></i>
+        <%= link_to new_product_wishlist_path(@product) do %>
+          <i class="fa-regular fa-heart heart"></i>
+        <% end %>
       </div>
       <%= image_tag("image-7.jpg", class: "product-show pb-4") %>
     </div>
+
+
 
     <div class="padding-right">
       <div class="pb-5">

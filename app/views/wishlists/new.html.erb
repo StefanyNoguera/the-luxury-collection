@@ -1,0 +1,7 @@
+<h1>Add product to your wishlist</h1>
+
+<%= form_for @wishlist, url: product_wishlists_path(@product) do |f| %>
+  <%= f.hidden_field :product_id, value: @product.id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit "Add" %>
+<% end %>

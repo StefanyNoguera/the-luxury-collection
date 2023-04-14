@@ -12,8 +12,16 @@
   <p><%= order.product.price %></p>
 <% end %>
 
-<% if @user == current_user %> %>
+<h1>WISHLIST</h1>
+<% @user.wishlists.each do |wishlist| %>
+  <p><%= wishlist.created_at %></p>
+  <p><%= wishlist.product.name %></p>
+  <p><%= wishlist.product.price %></p>
+<% end %>
+
+<% if @user == current_user %>
   <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-primary" %>
 <% end %>
 
 <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete} %>
+
