@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:create, :new]
     resources :wishlists, only: [:create, :new]
   end
-  resources :users, only: [:show, :destroy]
+  resources :users, only: [:show, :destroy] do
+    resources :sellers, only: [:create, :new]
+  end
 end

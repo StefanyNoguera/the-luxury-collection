@@ -19,9 +19,13 @@
   <p><%= wishlist.product.price %></p>
 <% end %>
 
+<%# CREATE A SELLER ACCOUNT %>
+<% if @user.seller.nil? %>
+  <%= link_to "Create a seller account", new_user_seller_path(current_user), class: "btn btn-primary" %>
+<% end %>
+
 <% if @user == current_user %>
   <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-primary" %>
 <% end %>
 
 <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete} %>
-
