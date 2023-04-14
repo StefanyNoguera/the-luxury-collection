@@ -12,7 +12,7 @@
     <div class="padding-right">
       <div class="pb-5">
         <h1 class="big-font"><%= @product.name %></h1>
-        <h1 class="medium-font"><%= link_to @product.brand, "" %></h1>
+        <h1 class="medium-font"><%= link_to @product.brand, products_path(brand: @product.brand) %></h1>
         <h1 class="medium-font">Size: <%=@product.size %></h1>
         <h1 class="bold-medium-font"><%=@product.price %>$</h1>
       </div>

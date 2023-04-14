@@ -10,22 +10,22 @@
     <div class="cards">
       <div class="card">
         <%= image_tag "gucci-card.jpg", :class => "img-style pb-4" %>
-        <p class="transparent-btn small-font"><%=link_to "GUCCI", ""%></p>
+        <p class="transparent-btn small-font"><%=link_to "GUCCI", products_path(brand: "Gucci")%></p>
       </div>
 
       <div class="card">
         <%= image_tag "vivienne-card.jpg", :class => "img-style pb-4" %>
-        <p class="transparent-btn small-font"><%=link_to "VIVIENNE WESTWOOD", ""%></p>
+        <p class="transparent-btn small-font"><%=link_to "VIVIENNE WESTWOOD", products_path(brand: "Vivienne Westwood")%></p>
       </div>
 
       <div class="card">
         <%= image_tag "rick-card.jpg", :class => "img-style pb-4" %>
-        <p class="transparent-btn small-font"><%=link_to "RICK OWENS", ""%></p>
+        <p class="transparent-btn small-font"><%=link_to "RICK OWENS", products_path(brand: "Rick Owens")%></p>
       </div>
 
       <div class="card">
         <%= image_tag "louis-card.jpg", :class => "img-style pb-4" %>
-        <p class="transparent-btn small-font"><%=link_to "LOUIS VUITTON", ""%></p>
+        <p class="transparent-btn small-font"><%=link_to "LOUIS VUITTON", products_path(brand: "Louis Vuitton")%></p>
       </div>
     </div>
   </div>
@@ -45,19 +45,19 @@
         <%= image_tag "category1.jpg", :class => "img-style-3" %>
         <p class="bold-medium-font pt-3 mb-2">BAGS</p>
         <p class="smaller-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-        <p class="small-link small-width"><%=link_to "SHOP NOW", ""%></p>
+        <p class="small-link small-width"><%=link_to "SHOP NOW", products_path(category_id: Category.find_by(name: "Bags").id)%></p>
       </div>
       <div>
         <%= image_tag "category2.jpg", :class => "img-style-3" %>
         <p class="bold-medium-font pt-3 mb-2">SHOES</p>
         <p class="smaller-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-        <p class="small-link small-width"><%=link_to "SHOP NOW", ""%></p>
+        <p class="small-link small-width"><%=link_to "SHOP NOW", products_path(category_id: Category.find_by(name: "Shoes").id)%></p>
       </div>
       <div>
         <%= image_tag "category3.jpg", :class => "img-style-3" %>
         <p class="bold-medium-font pt-3 mb-2">JEWELRY</p>
         <p class="smaller-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-        <p class="small-link small-width"><%=link_to "SHOP NOW", ""%></p>
+        <p class="small-link small-width"><%=link_to "SHOP NOW", products_path(category_id: Category.find_by(name: "Jewelry").id)%></p>
       </div>
     </div>
   </div>
