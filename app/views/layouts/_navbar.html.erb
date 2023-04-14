@@ -12,7 +12,7 @@
       <ul class="navbar-nav me-auto small-font">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Profile", "#", class: "nav-link small-font" %>
+            <%= link_to "Profile", user_path(current_user), class: "nav-link small-font" %>
           </li>
           <li class="nav-item dropdown">
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
