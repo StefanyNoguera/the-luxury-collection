@@ -29,7 +29,7 @@
         <h1 class="small-font">by <%= link_to @product.seller.user.username, "" %></h1>
       </div>
       <div>
-        <p class="black-btn white-medium-font"><%= link_to "BUY NOW", ""%></p>
+        <p class="black-btn white-medium-font"><%= link_to "BUY NOW", new_product_order_path(@product)%></p>
       </div>
     </div>
   </div>
