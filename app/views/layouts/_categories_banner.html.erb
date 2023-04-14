@@ -1,10 +1,10 @@
   <div class="bg-white">
     <ul class="medium-font categories">
-      <li m-5><%=link_to "TOPS", ""%></li>
-      <li><%=link_to "BOTTOMS", ""%></li>
-      <li><%=link_to "SHOES", ""%></li>
-      <li><%=link_to "JEWELRY", ""%></li>
-      <li><%=link_to "BAGS", ""%></li>
+    <li m-5><%=link_to "TOPS", products_path(category_id: Category.find_by(name: "Tops").id) %></li>
+    <li><%=link_to "BOTTOMS", products_path(category_id: Category.find_by(name: "Bottoms").id) %></li>
+    <li><%=link_to "SHOES", products_path(category_id: Category.find_by(name: "Shoes").id) %></li>
+    <li><%=link_to "JEWELRY", products_path(category_id: Category.find_by(name: "Jewelry").id) %></li>
+    <li><%=link_to "BAGS", products_path(category_id: Category.find_by(name: "Bags").id) %></li>
       <li><%=link_to "ALL", products_path %></li>
     </ul>
   </div>

@@ -57,7 +57,7 @@
         <%= image_tag "category3.jpg", :class => "img-style-3" %>
         <p class="bold-medium-font pt-3 mb-2">JEWELRY</p>
         <p class="smaller-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-        <p class="small-link small-width"><%=link_to "SHOP NOW", ""%></p>
+        <p class="small-link small-width"><%=link_to "SHOP NOW", products_path(category_id: Category.find_by(name: "Jewelry").id)%></p>
       </div>
     </div>
   </div>

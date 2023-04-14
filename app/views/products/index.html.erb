@@ -2,7 +2,8 @@
   <%= render partial: "layouts/categories_banner" %>
 
   <div>
-    <h1 class="big-font centered-title">ALL</h1>
+    <h1 class="big-font centered-title"><%= @category ? @category.name.upcase : "ALL" %></h1>
+
   </div>
 
   <div class="index-cards">
