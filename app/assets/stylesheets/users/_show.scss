@@ -42,8 +42,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 2em;
 }
 
 .button-size {
   width: 18em;
+}
+
+.img-profile {
+  height: 15vw;
+  width: 15vw;
+  object-fit: cover;
+  margin-right: 2em;
+}
+
+.profile-img-info {
+  display: flex;
+  align-items: center;
 }

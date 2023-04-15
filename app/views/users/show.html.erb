@@ -1,9 +1,14 @@
 <div class="profile-container">
   <div class="profile-banner">
-    <div>
-      <p class="big-font"><%= "#{@user.first_name} #{@user.last_name}" %></p>
-      <h1 class="bold-medium-font">@<%= @user.username %></h1>
-      <p class="bold-small-font">Joined: <%= @user.created_at.strftime('%b %d %Y') %></p>
+    <div class="profile-img-info">
+      <div>
+        <%= image_tag "guy-portrait.jpg", :class => "img-profile" %>
+      </div>
+      <div>
+        <p class="big-font"><%= "#{@user.first_name} #{@user.last_name}" %></p>
+        <h1 class="bold-medium-font">@<%= @user.username %></h1>
+        <p class="bold-small-font">Joined: <%= @user.created_at.strftime('%b %d %Y') %></p>
+      </div>
     </div>
     <div class="button-size">
       <% if @user.seller.nil? %>
@@ -40,21 +45,4 @@
       </div>
     <% end %>
   </div>
-
-  <h1>WISHLIST</h1>
-  <% @user.wishlists.each do |wishlist| %>
-    <% if @user.orders.where(product_id: wishlist.product.id).any? %>
-      <% next %>
-    <% else %>
-      <p><%= wishlist.created_at %></p>
-      <p><%= link_to wishlist.product.name, product_path(wishlist.product) %></p>
-      <p><%= wishlist.product.price %></p>
-    <% end %>
-  <% end %>
-
-  <% if @user == current_user %>
-    <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-primary" %>
-  <% end %>
-
-  <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete} %>
 </div>
