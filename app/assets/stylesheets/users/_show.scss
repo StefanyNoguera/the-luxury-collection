@@ -1,0 +1,45 @@
+.profile-container {
+  margin-left: 10em;
+  margin-right: 10em;
+}
+
+.order-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.img-order {
+  height: 10vw;
+  width: 10vw;
+  object-fit: cover;
+  background-image: url("gucci-card.jpg");
+  margin-bottom: 0.5em;
+}
+
+.price-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  width: 8.5em;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 15em;
+}
+
+.link {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.profile-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
