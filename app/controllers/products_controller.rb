@@ -8,8 +8,9 @@ class ProductsController < ApplicationController
       @products = Product.where(brand: params[:brand])
       @title = params[:brand].upcase
     else
-      @products = Product.all
+      @all_products = Product.all
       @title = "ALL"
+      @products = @all_products
     end
   end
 
@@ -34,6 +35,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :brand, :description, :price, :size, :category_id, :condition_id, :photo)
+    params.require(:product).permit(:name, :description, :price, :brand, :category_id, :photo)
   end
 end

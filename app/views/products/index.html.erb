@@ -9,10 +9,18 @@
     <% @products.each do |product| %>
       <div class="index-card">
         <%# <%= image_tag product.photo, :class => "img-style pb-4" %>
+
         <div class="img-product">
-          <i class="fa-regular fa-heart heart"></i>
+          <% if current_user.wishlists.where(product_id: product.id).any? %>
+            <i class="fa-solid fa-heart heart"></i>
+          <% else %>
+            <%= link_to new_product_wishlist_path(product) do %>
+              <i class="fa-regular fa-heart heart-1"></i>
+            <% end %>
+          <% end %>
           <%# <%= image_tag "gucci-card.jpg", class: "img-product pb-3" %>
         </div>
+
         <p class="bold-small-font mb-2"><%=link_to product.name, product_path(product)%></p>
         <p class="smaller-font mb-1"><%=link_to product.brand, product_path(product)%></p>
         <%# interpolate size of the product without link_to%>
