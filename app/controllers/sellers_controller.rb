@@ -1,4 +1,8 @@
 class SellersController < ApplicationController
+  def show
+    @seller = Seller.find(current_user.seller.id)
+  end
+
   def new
     @seller = Seller.new
   end
@@ -15,6 +19,12 @@ class SellersController < ApplicationController
         render :new
       end
     end
+  end
+
+  def destroy
+    @seller = Seller.find(params[:id])
+    @seller.destroy
+    redirect_to user_path(current_user), notice: "Seller account deleted."
   end
 
   private
