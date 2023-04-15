@@ -7,9 +7,9 @@
     </div>
     <div class="button-size">
       <% if @user.seller.nil? %>
-        <%= link_to "Create a seller account", new_user_seller_path(current_user), class: "black-btn white-medium-font" %>
+        <p class="black-btn white-small-font"><%= link_to "Create a seller account", new_user_seller_path(current_user) %></p>
       <% else %>
-        <p class="black-btn white-small-font"><%= link_to "Seller Profile", user_seller_path(current_user) %></p>
+        <p class="black-btn white-small-font"><%= link_to "See your seller profile", user_seller_path(current_user) %></p>
       <% end %>
     </div>
   </div>
