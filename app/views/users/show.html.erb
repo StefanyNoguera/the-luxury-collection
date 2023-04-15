@@ -5,11 +5,11 @@
       <h1 class="bold-medium-font">@<%= @user.username %></h1>
       <p class="bold-small-font">Joined: <%= @user.created_at.strftime('%b %d %Y') %></p>
     </div>
-    <div>
+    <div class="button-size">
       <% if @user.seller.nil? %>
         <%= link_to "Create a seller account", new_user_seller_path(current_user), class: "black-btn white-medium-font" %>
       <% else %>
-        <p class="black-btn white-medium-font"><%= link_to "Seller Profile", user_seller_path(current_user) %></p>
+        <p class="black-btn white-small-font"><%= link_to "Seller Profile", user_seller_path(current_user) %></p>
       <% end %>
     </div>
   </div>
@@ -50,13 +50,6 @@
       <p><%= link_to wishlist.product.name, product_path(wishlist.product) %></p>
       <p><%= wishlist.product.price %></p>
     <% end %>
-  <% end %>
-
-  <%# CREATE A SELLER ACCOUNT %>
-  <% if @user.seller.nil? %>
-    <%= link_to "Create a seller account", new_user_seller_path(current_user), class: "btn btn-primary" %>
-  <% else %>
-    <%= link_to "Seller Profile", user_seller_path(current_user), class: "btn btn-primary" %>
   <% end %>
 
   <% if @user == current_user %>
