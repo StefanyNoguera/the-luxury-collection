@@ -1,0 +1,16 @@
+<h1>Seller Profile</h1>
+
+<%= @seller.description %>
+
+<h1>Products</h1>
+<% if @seller.products.empty? %>
+  <p>You have no products</p>
+<% else %>
+  <% @seller.products.each do |product| %>
+    <p><%= product.name %></p>
+    <p><%= product.price %></p>
+  <% end %>
+<% end %>
+
+<%# I want to add a link to create a new product %>
+<%= link_to "Create a new product", new_product_path %>

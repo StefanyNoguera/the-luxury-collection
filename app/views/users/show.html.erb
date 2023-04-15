@@ -10,9 +10,31 @@
   <p><%= order.created_at %></p>
   <p><%= order.product.name %></p>
   <p><%= order.product.price %></p>
+  <%# There should be a button her to leave a review %>
+  <% if order.product.reviews.where(user_id: current_user.id).empty? %>
+    <%= link_to "Leave a review", new_product_review_path(order.product), class: "btn btn-primary" %>
+  <% end %>
 <% end %>
 
-<% if @user == current_user %> %>
+<h1>WISHLIST</h1>
+<% @user.wishlists.each do |wishlist| %>
+  <% if @user.orders.where(product_id: wishlist.product.id).any? %>
+    <% next %>
+  <% else %>
+    <p><%= wishlist.created_at %></p>
+    <p><%= link_to wishlist.product.name, product_path(wishlist.product) %></p>
+    <p><%= wishlist.product.price %></p>
+  <% end %>
+<% end %>
+
+<%# CREATE A SELLER ACCOUNT %>
+<% if @user.seller.nil? %>
+  <%= link_to "Create a seller account", new_user_seller_path(current_user), class: "btn btn-primary" %>
+<% else %>
+  <%= link_to "Seller Profile", user_seller_path(current_user), class: "btn btn-primary" %>
+<% end %>
+
+<% if @user == current_user %>
   <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-primary" %>
 <% end %>
 
