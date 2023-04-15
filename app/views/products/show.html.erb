@@ -37,4 +37,22 @@
       </div>
     </div>
   </div>
+
+  <%# SHOW PRODUCT REVIEWS IF ANY %>
+  <% if @product.reviews.any? %>
+    <div class="show-container mt-5">
+      <h1 class="big-font">PRODUCT REVIEWS</h1>
+      <% @product.reviews.each do |review| %>
+        <div class="card mb-3">
+          <div class="card-header">
+            <%= link_to review.user.username, user_path(review.user) %>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Rating: <%= review.rating %>/5</h5>
+            <p class="card-text"><%= review.comment %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
