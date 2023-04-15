@@ -1,10 +1,10 @@
 <h1>CREATE A NEW PRODUCT</h1>
 
-<%= form_for @product do |f| %>
+<%= form_for @product, url: products_path do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
 
-  <%= f.label :brand_id %>
+  <%= f.label :brand %>
   <%= f.text_field :brand %>
 
   <%= f.label :description %>

@@ -34,7 +34,7 @@
         <h1 class="medium-font"><%= @product.condition.name %></h1>
       </div>
       <div class="pb-5">
-        <h1 class="small-font">by <%= link_to @product.seller.user.username, "" %></h1>
+        <h1 class="small-font">by <%= link_to @product.seller.user.username, user_seller_path(@product.seller) %></h1>
       </div>
       <div>
         <p class="black-btn white-medium-font"><%= link_to "BUY NOW", new_product_order_path(@product)%></p>
