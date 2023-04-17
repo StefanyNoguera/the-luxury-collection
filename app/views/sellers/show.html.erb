@@ -27,9 +27,19 @@
               <p class="smaller-font mb-1"><%=link_to product.brand, product_path(product)%></p>
             </div>
 
-            <div class="price-section">
-              <p class="bold-smaller-font mb-3"><%=product.price%>$</p>
+            <div class="price-section-2">
+              <div>
+                <p class="bold-smaller-font price"><%=product.price%>$</p>
+              </div>
+              <% if @seller.user == current_user %>
+                <div>
+                  <%= link_to destroy_product_path(product), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} do %>
+                    <i class="fa-solid fa-trash trash-icon"></i>
+                  <% end %>
+                </div>
+              <% end %>
             </div>
+
           </div>
           <hr>
         </div>

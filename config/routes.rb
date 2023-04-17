@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :products, only: [:index, :show, :new, :create, :destroy] do
+  delete "products/:id", to: "products#destroy", as: :destroy_product
+  resources :products, only: [:index, :show, :new, :create] do
     resources :orders, only: [:create, :new]
     resources :wishlists, only: [:create, :new]
     resources :reviews, only: [:create, :new]
