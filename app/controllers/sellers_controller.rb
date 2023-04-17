@@ -1,6 +1,6 @@
 class SellersController < ApplicationController
   def show
-    @seller = Seller.find(current_user.seller.id)
+    @seller = Seller.find(params[:user_id])
   end
 
   def new
