@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
+
   def index
     if params[:category_id]
       @category = Category.find(params[:category_id])
@@ -30,6 +32,12 @@ class ProductsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to user_seller_path(current_user.seller)
   end
 
   private

@@ -1,16 +1,54 @@
-<h1>Seller Profile</h1>
+<div class="profile-container">
+  <div class="profile-banner">
+    <div class="profile-img-info">
+      <div>
+        <%= image_tag "guy-portrait.jpg", :class => "img-profile" %>
+      </div>
+      <div>
+        <h1 class="bold-medium-font">@<%= @seller.user.username %></h1>
+        <p class="bold-small-font">Joined: <%= @seller.created_at.strftime('%b %d %Y') %></p>
+      </div>
+    </div>
+    <div class="button-size">
+      <p class="small-font">Products by @<%= @seller.user.username %>: <%= @seller.products.count %></p>
+    </div>
+  </div>
 
-<%= @seller.description %>
+  <h1 class="big-font">Products by @<%= @seller.user.username %></h1>
+    <% if @seller.products.empty? %>
+      <p class="small-font">This seller hasn't posted any products yet.</p>
+    <% else %>
+      <% @seller.products.each do |product| %>
+        <div class="pt-2">
+          <div class="order-card">
+            <div class="img-order"></div>
+            <div class="info-section">
+              <p class="bold-small-font mb-2"><%=link_to product.name, product_path(product)%></p>
+              <p class="smaller-font mb-1"><%=link_to product.brand, product_path(product)%></p>
+            </div>
 
-<h1>Products</h1>
-<% if @seller.products.empty? %>
-  <p>You have no products</p>
-<% else %>
-  <% @seller.products.each do |product| %>
-    <p><%= product.name %></p>
-    <p><%= product.price %></p>
+            <div class="price-section-2">
+              <div>
+                <p class="bold-smaller-font price"><%=product.price%>$</p>
+              </div>
+              <% if @seller.user == current_user %>
+                <div>
+                  <%= link_to destroy_product_path(product), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} do %>
+                    <i class="fa-solid fa-trash trash-icon"></i>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+
+          </div>
+          <hr>
+        </div>
+      <% end %>
+    <% end %>
+
+  <% if @seller.user == current_user %>
+    <div class="button-size">
+      <p class="black-btn white-small-font"><%= link_to "Create a new product", new_product_path %></p>
+    </div>
   <% end %>
-<% end %>
-
-<%# I want to add a link to create a new product %>
-<%= link_to "Create a new product", new_product_path %>
+</div>
