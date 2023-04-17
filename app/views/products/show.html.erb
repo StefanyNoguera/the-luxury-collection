@@ -4,10 +4,16 @@
   <div class="show-container">
     <div class="padding-left">
       <div class="flex-end">
-        <% if current_user.wishlists.where(product_id: @product.id).any? %>
-          <i class="fa-solid fa-heart heart"></i>
+        <% if user_signed_in? %>
+          <% if current_user.wishlists.where(product_id: @product.id).any? %>
+            <i class="fa-solid fa-heart heart"></i>
+          <% else %>
+            <%= link_to new_product_wishlist_path(@product) do %>
+              <i class="fa-regular fa-heart heart-1"></i>
+            <% end %>
+          <% end %>
         <% else %>
-          <%= link_to new_product_wishlist_path(@product) do %>
+          <%= link_to new_user_session_path do %>
             <i class="fa-regular fa-heart heart-1"></i>
           <% end %>
         <% end %>
@@ -37,7 +43,11 @@
         <h1 class="small-font">by <%= link_to @product.seller.user.username, user_seller_path(@product.seller) %></h1>
       </div>
       <div>
-        <p class="black-btn white-medium-font"><%= link_to "BUY NOW", new_product_order_path(@product)%></p>
+        <% if user_signed_in? %>
+          <p class="black-btn white-medium-font"><%= link_to "BUY NOW", new_product_order_path(@product)%></p>
+        <% else %>
+          <p class="black-btn white-medium-font"><%= link_to "BUY NOW", new_user_session_path %></p>
+        <% end %>
       </div>
     </div>
   </div>
@@ -49,7 +59,7 @@
       <% @product.reviews.each do |review| %>
         <div class="card mb-3">
           <div class="card-header">
-            <%= link_to review.user.username, user_path(review.user) %>
+            <p>@<%= review.user.username %></p>
           </div>
           <div class="card-body">
             <h5 class="card-title">Rating: <%= review.rating %>/5</h5>
