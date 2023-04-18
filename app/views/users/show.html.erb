@@ -38,8 +38,6 @@
               <div class="link">
                 <% if order.product.reviews.where(user_id: current_user.id).empty? %>
                   <%= link_to "Leave a review", new_product_review_path(order.product), class: "small-link" %>
-                <% else %>
-                  <%= link_to "Edit review", "", class: "small-link" %>
                 <% end %>
               </div>
             </div>
