@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :wishlists, only: [:create, :new]
     resources :reviews, only: [:create, :new]
   end
+  get "users/:id", to: "users#card", as: "user_card"
   resources :users, only: [:show] do
     resources :sellers, only: [:create, :new, :show]
   end
