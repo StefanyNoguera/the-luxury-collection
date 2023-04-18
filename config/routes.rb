@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'users/show'
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: "users/registrations"
+  }
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
     resources :wishlists, only: [:create, :new]
     resources :reviews, only: [:create, :new]
   end
+  get "users/:id", to: "users#card", as: "user_card"
   resources :users, only: [:show] do
     resources :sellers, only: [:create, :new, :show]
   end

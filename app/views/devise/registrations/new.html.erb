@@ -31,6 +31,14 @@
                         input_html: { autocomplete: "email" }%>
           </div>
 
+          <div class="field">
+            <%= f.label :username %>
+            <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+
+            <%= f.label :photo %>
+            <%= f.file_field :photo, autofocus: true, autocomplete: "photo" %>
+          </div>
+
           <div>
             <%= f.input :password,
                         required: true,

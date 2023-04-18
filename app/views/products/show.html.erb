@@ -40,6 +40,12 @@
         <h1 class="medium-font"><%= @product.condition.name %></h1>
       </div>
       <div class="pb-5">
+
+        <div data-controller="popover" data-popover-url-value="<%=user_card_path(@product.seller.user) %>">
+          This is where i'd like to put my popover
+          <span data-action="mouseenter->popover#show mouseleave->popover#hide"> <%= link_to "profile card", user_seller_path(@product.seller) %></span>
+        </div>
+
         <h1 class="small-font">by <%= link_to @product.seller.user.username, user_seller_path(@product.seller) %></h1>
       </div>
       <div>
