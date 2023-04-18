@@ -40,6 +40,12 @@
         <h1 class="medium-font"><%= @product.condition.name %></h1>
       </div>
       <div class="pb-5">
+
+        <div data-controller="popover" data-popover-url-value="<%= card_path %>">
+        You can load popover with AJAX. For instance, this is my
+        <a href="/profile" data-action="mouseenter->popover#show mouseleave->popover#hide">profile card</a>
+        </div>
+        
         <h1 class="small-font">by <%= link_to @product.seller.user.username, user_seller_path(@product.seller) %></h1>
       </div>
       <div>
