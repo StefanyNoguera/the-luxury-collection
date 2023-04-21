@@ -25,8 +25,8 @@ puts "Creating Users..."
     email: Faker::Internet.safe_email,
     password: "123456"
   )
-  # file = URI.open('https://thispersondoesnotexist.com/image')
-  # user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+  file = URI.open('https://thispersondoesnotexist.com/image')
+  user.image.attach(io: file, filename: 'user.png', content_type: 'image/png')
 end
 puts "Finished creating #{User.count} Users..."
 # USERS SEEDS

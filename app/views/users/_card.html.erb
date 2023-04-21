@@ -1,0 +1,16 @@
+<div data-popover-target="card">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-4">
+          <%= image_tag(url_for(@user.photo), class: "user_card_image") if @user.photo.attached? %>
+        </div>
+        <div class="col-8">
+          <%# dean@example.com -> ['dean', '@', 'example.com] -> [0] -> dean.capitalize -> Dean %>
+          <h5 class="card-title"><%= @user.email.split('@')[0].capitalize %></h5>
+          <p>This boy cray.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

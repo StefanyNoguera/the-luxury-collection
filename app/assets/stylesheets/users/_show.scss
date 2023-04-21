@@ -24,6 +24,12 @@
   width: 8.5em;
 }
 
+.price-section-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .info-section {
   display: flex;
   flex-direction: column;
@@ -59,4 +65,13 @@
 .profile-img-info {
   display: flex;
   align-items: center;
+}
+
+.trash-icon {
+  margin-left: 1em;
+  color: red;
+}
+
+.price {
+  margin-bottom: 0em;
 }

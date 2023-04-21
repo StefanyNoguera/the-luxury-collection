@@ -2,7 +2,8 @@
   <div class="profile-banner">
     <div class="profile-img-info">
       <div>
-        <%= cl_image_tag("https://res.cloudinary.com/dwgembu1s/image/upload/v1682106248/lwg9d7ckxqsret6qns0i.jpg", class: "img-profile") %>
+        <%= image_tag current_user.photo, class: "img-profile" if current_user.photo.attached? %>
+        <%# <%= image_tag "guy-portrait.jpg", :class => "img-profile" %> %>
       </div>
       <div>
         <p class="big-font"><%= "#{@user.first_name} #{@user.last_name}" %></p>
@@ -14,35 +15,37 @@
       <% if @user.seller.nil? %>
         <p class="black-btn white-small-font"><%= link_to "Create a seller account", new_user_seller_path(current_user) %></p>
       <% else %>
-        <p class="black-btn white-small-font"><%= link_to "See your seller profile", user_seller_path(current_user) %></p>
+        <p class="black-btn white-small-font"><%= link_to "See your seller profile", user_seller_path(current_user.seller) %></p>
       <% end %>
     </div>
   </div>
 
   <h1 class="big-font">Purchases</h1>
-    <% @user.orders.each do |order| %>
-      <div class="pt-2">
-        <div class="order-card">
-          <div class="img-order"></div>
-          <div class="info-section">
-            <p class="bold-small-font mb-2"><%=link_to order.product.name, product_path(order.product)%></p>
-            <p class="smaller-font mb-1"><%=link_to order.product.brand, product_path(order.product)%></p>
-            <p class="bold-small-font"><%= order.created_at.strftime('%b %d %Y') %></p>
-          </div>
+    <% if @user.orders.empty? %>
+      <p class="small-font">You haven't made any purchases yet.</p>
+    <% else %>
+      <% @user.orders.each do |order| %>
+        <div class="pt-2">
+          <div class="order-card">
+            <div class="img-order"></div>
+            <div class="info-section">
+              <p class="bold-small-font mb-2"><%=link_to order.product.name, product_path(order.product)%></p>
+              <p class="smaller-font mb-1"><%=link_to order.product.brand, product_path(order.product)%></p>
+              <p class="bold-small-font"><%= order.created_at.strftime('%b %d %Y') %></p>
+            </div>
 
-          <div class="price-section">
-            <p class="bold-smaller-font mb-3"><%=order.product.price%>$</p>
-            <div class="link">
-              <% if order.product.reviews.where(user_id: current_user.id).empty? %>
-                <%= link_to "Leave a review", new_product_review_path(order.product), class: "small-link" %>
-              <% else %>
-                <%= link_to "Edit review", "", class: "small-link" %>
-              <% end %>
+            <div class="price-section">
+              <p class="bold-smaller-font mb-3"><%=order.product.price%>$</p>
+              <div class="link">
+                <% if order.product.reviews.where(user_id: current_user.id).empty? %>
+                  <%= link_to "Leave a review", new_product_review_path(order.product), class: "small-link" %>
+                <% end %>
+              </div>
             </div>
           </div>
+          <hr>
         </div>
-        <hr>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>

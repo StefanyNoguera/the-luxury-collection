@@ -15,12 +15,16 @@
             <%= link_to "Profile", user_path(current_user), class: "nav-link small-font" %>
           <%# </li> %>
           <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% if current_user.image.attached? %>
+            <%= image_tag cl_image_path(current_user.image.key), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+            <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Your profile", user_path(current_user), class: "dropdown-item small-font" %>
               <%= link_to "Wishlist", "#", class: "dropdown-item small-font" %>
               <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item small-font" %>
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item small-font", data: {turbo_method: :delete} %>
+          <% end %>
             </div>
           </li>
         <% else %>
