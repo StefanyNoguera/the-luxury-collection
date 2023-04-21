@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_one :seller, dependent: :destroy
   has_many :orders, dependent: :destroy
-  has_one_attached :image, dependent: :destroy
+  has_one_attached :photo, dependent: :destroy
 end

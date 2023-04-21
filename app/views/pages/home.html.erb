@@ -9,22 +9,22 @@
     <h1 class="big-font centered-title">TOP BRANDS YOU LOVE</h1>
     <div class="cards">
       <div class="card">
-        <%= image_tag "gucci-card.jpg", :class => "img-style pb-4" %>
+        <%= cl_image_tag("https://res.cloudinary.com/dwgembu1s/image/upload/v1682105979/xlixo1b51gw76mvvsdhl.jpg", class: "img-style pb-4") %>
         <p class="transparent-btn small-font"><%=link_to "GUCCI", products_path(brand: "Gucci")%></p>
       </div>
 
       <div class="card">
-        <%= image_tag "vivienne-card.jpg", :class => "img-style pb-4" %>
+        <%= cl_image_tag("https://res.cloudinary.com/dwgembu1s/image/upload/v1682106919/bha96ypjnmudb9azvvy8.jpg", class: "img-style pb-4") %>
         <p class="transparent-btn small-font"><%=link_to "VIVIENNE WESTWOOD", products_path(brand: "Vivienne Westwood")%></p>
       </div>
 
       <div class="card">
-        <%= image_tag "rick-card.jpg", :class => "img-style pb-4" %>
+        <%= cl_image_tag("https://res.cloudinary.com/dwgembu1s/image/upload/v1682106758/uzaeaox1wfvvlapeaukm.jpg", class: "img-style pb-4") %>
         <p class="transparent-btn small-font"><%=link_to "RICK OWENS", products_path(brand: "Rick Owens")%></p>
       </div>
       
       <div class="card">
-        <%= image_tag "louis-card.jpg", :class => "img-style pb-4" %>
+        <%= cl_image_tag("https://res.cloudinary.com/dwgembu1s/image/upload/v1682106641/hwl6qvre9ktdtfv3y98o.jpg", class: "img-style pb-4") %>
         <p class="transparent-btn small-font"><%=link_to "LOUIS VUITTON", products_path(brand: "Louis Vuitton")%></p>
       </div>
     </div>
@@ -42,19 +42,19 @@
     <h1 class="big-font centered-title">SHOP BY CATEGORY</h1>
     <div class="cards">
       <div>
-        <%= image_tag "category1.jpg", :class => "img-style-3" %>
+        <%= cl_image_tag("https://res.cloudinary.com/dwgembu1s/image/upload/v1682105055/xl9vypie4vprtyvswlhp.jpg", class: "img-style-3") %>
         <p class="bold-medium-font pt-3 mb-2">BAGS</p>
         <p class="smaller-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
         <p class="small-link small-width"><%=link_to "SHOP NOW", products_path(category_id: Category.find_by(name: "Bags").id)%></p>
       </div>
       <div>
-        <%= image_tag "category2.jpg", :class => "img-style-3" %>
+        <%= cl_image_tag("https://res.cloudinary.com/dwgembu1s/image/upload/v1682105407/claw3rugewfpgiepj4fb.jpg", class: "img-style-3") %>
         <p class="bold-medium-font pt-3 mb-2">SHOES</p>
         <p class="smaller-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
         <p class="small-link small-width"><%=link_to "SHOP NOW", products_path(category_id: Category.find_by(name: "Shoes").id)%></p>
       </div>
       <div>
-        <%= image_tag "category3.jpg", :class => "img-style-3" %>
+        <%= cl_image_tag("https://res.cloudinary.com/dwgembu1s/image/upload/v1682105520/otvorlmypxvwbipm42th.jpg", class: "img-style-3") %>
         <p class="bold-medium-font pt-3 mb-2">JEWELRY</p>
         <p class="smaller-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
         <p class="small-link small-width"><%=link_to "SHOP NOW", products_path(category_id: Category.find_by(name: "Jewelry").id)%></p>
@@ -64,7 +64,7 @@
 
   <div class="section-4 pt-5">
     <div class="review-sec">
-      <%= image_tag "guy-portrait.jpg", :class => "img_circle center-item " %>
+      <%= cl_image_tag("https://res.cloudinary.com/dwgembu1s/image/upload/v1682106248/lwg9d7ckxqsret6qns0i.jpg", class: "img_circle center-item") %>
       <p class="big-font center-item pt-3">TYRONE WEST</p>
       <p class="medium-font center-item">Selling with The Luxury Collection since 2018</p>
       <p class="small-font center-item">"The Luxury Collection is a fantastic platform for luxury clothing sellers. The customers are engaged and receptive and the platform is user-friendly. Thank you for providing such a great service."</p>
