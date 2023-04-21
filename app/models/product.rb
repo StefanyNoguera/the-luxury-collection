@@ -5,4 +5,5 @@ class Product < ApplicationRecord
   has_one :order, dependent: :destroy
   belongs_to :seller
   has_many :wishlists, dependent: :destroy
+  has_many_attached :photos, dependent: :destroy
 end
