@@ -11,10 +11,16 @@
         <%# <%= image_tag product.photo, :class => "img-style pb-4" %>
 
         <div class="img-product">
-          <% if current_user.wishlists.where(product_id: product.id).any? %>
-            <i class="fa-solid fa-heart heart"></i>
+          <% if user_signed_in? %>
+            <% if current_user.wishlists.where(product_id: product.id).any? %>
+              <i class="fa-solid fa-heart heart"></i>
+            <% else %>
+              <%= link_to new_product_wishlist_path(product) do %>
+                <i class="fa-regular fa-heart heart-1"></i>
+              <% end %>
+            <% end %>
           <% else %>
-            <%= link_to new_product_wishlist_path(product) do %>
+            <%= link_to new_user_session_path do %>
               <i class="fa-regular fa-heart heart-1"></i>
             <% end %>
           <% end %>

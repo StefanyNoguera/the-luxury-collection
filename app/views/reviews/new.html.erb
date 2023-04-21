@@ -1,20 +1,28 @@
-<h1>New Review</h1>
+<div class="container-fluid">
+  <div class="centered-body">
+    <div class="log-in-div">
+      <div>
+        <h1 class="big-font">LEAVE A REVIEW</h1>
+      </div>
 
-<%= form_with(model: [@product, @review], local: true) do |form| %>
-  <div class="form-group">
-    <%= form.label :rating %>
-    <%= form.number_field :rating, min: 1, max: 5, class: "form-control", required: true %>
-    <p class="text-muted">Rating should be between 1 and 5.</p>
+      <%= form_with(model: [@product, @review], local: true) do |form| %>
+        <div class="form-inputs">
+          <%= form.label :rating %>
+          <%= form.number_field :rating, min: 1, max: 5, class: "form-control", required: true %>
+          <p class="text-muted">Rating should be between 1 and 5.</p>
+
+          <%= form.label :comment %>
+          <%= form.text_area :comment, class: "form-control", required: true %>
+        </div>
+
+        <div class="form-actions mt-3">
+          <%= form.submit "Submit", class: "white-medium-font log-in-button mb-3" %>
+      <% end %>
+
+          <%= link_to product_path(@product) do %>
+            <p class="small-link">Back</p>
+          <% end %>
+        </div>
+    </div>
   </div>
-
-  <div class="form-group">
-    <%= form.label :comment %>
-    <%= form.text_area :comment, class: "form-control", required: true %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Submit", class: "btn btn-primary" %>
-  </div>
-<% end %>
-
-<%= link_to "Back", product_path(@product) %>
+</div>
