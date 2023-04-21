@@ -26,7 +26,7 @@ puts "Creating Users..."
     password: "123456"
   )
   file = URI.open('https://thispersondoesnotexist.com/image')
-  user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+  user.image.attach(io: file, filename: 'user.png', content_type: 'image/png')
 end
 puts "Finished creating #{User.count} Users..."
 # USERS SEEDS
