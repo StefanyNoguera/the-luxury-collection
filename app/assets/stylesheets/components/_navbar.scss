@@ -18,3 +18,9 @@ hr {
 .padding {
   padding-left: 0.5em;
 }
+
+.profile-pic {
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}

@@ -13,8 +13,7 @@
             <%= f.label :username %>
             <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
 
-            <%= f.label :image %>
-            <%= f.file_field :image, autofocus: true, autocomplete: "image" %>
+            <%= f.input :photo, as: :file %>
           </div>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
