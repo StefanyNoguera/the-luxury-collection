@@ -2,12 +2,7 @@
   <div class="profile-banner">
     <div class="profile-img-info">
       <div>
-<<<<<<< HEAD
-        <%= image_tag current_user.photo, class: "img-profile" if current_user.photo.attached? %>
-        <%# <%= image_tag "guy-portrait.jpg", :class => "img-profile" %> %>
-=======
         <%= cl_image_tag("https://res.cloudinary.com/dwgembu1s/image/upload/v1682106248/lwg9d7ckxqsret6qns0i.jpg", class: "img-profile") %>
->>>>>>> e1815874dd85f366f96f784bc186ffe0d2086659
       </div>
       <div>
         <p class="big-font"><%= "#{@user.first_name} #{@user.last_name}" %></p>

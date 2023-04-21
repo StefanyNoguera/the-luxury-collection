@@ -8,6 +8,12 @@ class UsersController < ApplicationController
     render partial: 'users/card', locals: { user: @user }
   end
 
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to user_path
+  end
+
   private
 
   def set_user
