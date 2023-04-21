@@ -2,7 +2,7 @@
   <div class="profile-banner">
     <div class="profile-img-info">
       <div>
-        <%= image_tag "guy-portrait.jpg", :class => "img-profile" %>
+        <%= cl_image_tag("https://res.cloudinary.com/dwgembu1s/image/upload/v1682106248/lwg9d7ckxqsret6qns0i.jpg", class: "img-profile") %>
       </div>
       <div>
         <p class="big-font"><%= "#{@user.first_name} #{@user.last_name}" %></p>
