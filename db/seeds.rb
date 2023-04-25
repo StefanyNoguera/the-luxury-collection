@@ -9,26 +9,7 @@
 require 'open-uri'
 
 # USERS SEEDS
-
-puts "Cleaning Users..."
-User.destroy_all
-puts "#{User.count} Users..."
-puts "Creating Users..."
-
-10.times do
-  first_name = Faker::Name.first_name
-  last_name = Faker::Name.last_name
-  user = User.create(
-    first_name: first_name,
-    last_name: last_name,
-    username: "#{first_name.downcase}#{last_name.downcase}",
-    email: Faker::Internet.safe_email,
-    password: "123456"
-  )
-  file = URI.open('https://thispersondoesnotexist.com/image')
-  user.image.attach(io: file, filename: 'user.png', content_type: 'image/png')
-end
-puts "Finished creating #{User.count} Users..."
+require_relative 'user_seeds'
 # USERS SEEDS
 
 # CONDITIONS SEEDS
@@ -79,15 +60,22 @@ puts "Cleaning Sellers..."
 Seller.destroy_all
 puts "Creating Sellers..."
 
-User.limit(3).each do |user|
-  Seller.create(
-    description: Faker::Lorem.paragraph,
-    user_id: user.id
-  )
-end
+Seller.create(
+  description: "Welcome to my little corner of luxury! Here you'll find carefully selected items that are the epitome of sophistication, elegance, and style. I'm passionate about bringing you the best of the best, and I hope you'll love what you find here.",
+  user_id: User.find_by(first_name: "Stefany")
+)
+
+Seller.create(
+  description: "As a lover of all things luxurious, I've handpicked a selection of exquisite items that I know you'll adore. From high-end fashion to stunning jewelry, every piece in my collection is a testament to the beauty and quality of luxury goods.",
+  user_id: User.find_by(first_name: "Alessio")
+)
+
+Seller.create(
+  description: "I believe that true luxury is all about the details, which is why I've curated a collection of the finest items that showcase the best craftsmanship and design. Every item I sell is something I would love to own myself, and I'm thrilled to share my passion for luxury with you.",
+  user_id: User.find_by(first_name: "Yanett")
+)
 puts "Finished creating #{Seller.count} Sellers..."
 # SELLERS SEEDS
-
 
 # PRODUCTS SEEDS
 require_relative 'product_seeds'
