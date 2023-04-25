@@ -9,26 +9,7 @@
 require 'open-uri'
 
 # USERS SEEDS
-
-puts "Cleaning Users..."
-User.destroy_all
-puts "#{User.count} Users..."
-puts "Creating Users..."
-
-# 10.times do
-#   first_name = Faker::Name.first_name
-#   last_name = Faker::Name.last_name
-#   user = User.create(
-#     first_name: first_name,
-#     last_name: last_name,
-#     username: "#{first_name.downcase}#{last_name.downcase}",
-#     email: Faker::Internet.safe_email,
-#     password: "123456"
-#   )
-#   file = URI.open('https://thispersondoesnotexist.com/image')
-#   user.image.attach(io: file, filename: 'user.png', content_type: 'image/png')
-# end
-# puts "Finished creating #{User.count} Users..."
+require_relative 'user_seeds'
 # USERS SEEDS
 
 # CONDITIONS SEEDS
