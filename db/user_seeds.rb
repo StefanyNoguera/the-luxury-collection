@@ -1,6 +1,5 @@
 puts "Cleaning Users..."
 User.destroy_all
-puts "#{User.count} Users..."
 puts "Creating Users..."
 
 luis = User.create(
