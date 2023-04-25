@@ -2,7 +2,7 @@
   <div class="profile-banner">
     <div class="profile-img-info">
       <div>
-        <%= image_tag("https://res.cloudinary.com/dwgembu1s/image/upload/v1682106248/lwg9d7ckxqsret6qns0i.jpg", class: "img-profile") %>
+        <%= image_tag @seller.user.photo, class: "img-profile" %>
       </div>
       <div>
         <h1 class="bold-medium-font">@<%= @seller.user.username %></h1>
