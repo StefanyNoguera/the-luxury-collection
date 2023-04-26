@@ -6,8 +6,6 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-require 'open-uri'
-
 # USERS SEEDS
 require_relative 'user_seeds'
 # USERS SEEDS
@@ -62,17 +60,17 @@ puts "Creating Sellers..."
 
 Seller.create(
   description: "Welcome to my little corner of luxury! Here you'll find carefully selected items that are the epitome of sophistication, elegance, and style. I'm passionate about bringing you the best of the best, and I hope you'll love what you find here.",
-  user_id: User.find_by(first_name: "Stefany")
+  user_id: User.find_by(first_name: "Stefany").id
 )
 
 Seller.create(
   description: "As a lover of all things luxurious, I've handpicked a selection of exquisite items that I know you'll adore. From high-end fashion to stunning jewelry, every piece in my collection is a testament to the beauty and quality of luxury goods.",
-  user_id: User.find_by(first_name: "Alessio")
+  user_id: User.find_by(first_name: "Alessio").id
 )
 
 Seller.create(
   description: "I believe that true luxury is all about the details, which is why I've curated a collection of the finest items that showcase the best craftsmanship and design. Every item I sell is something I would love to own myself, and I'm thrilled to share my passion for luxury with you.",
-  user_id: User.find_by(first_name: "Yanett")
+  user_id: User.find_by(first_name: "Yanett").id
 )
 puts "Finished creating #{Seller.count} Sellers..."
 # SELLERS SEEDS
