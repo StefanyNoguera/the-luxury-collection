@@ -236,7 +236,7 @@ image_urls = [
   "https://res.cloudinary.com/dwgembu1s/image/upload/v1682551170/purple_bag_3_szr2pj.avif",
   "https://res.cloudinary.com/dwgembu1s/image/upload/v1682551170/purple_bag_4_zcfhwc.avif",
 ]
-image_urls.each do |image_url|
+image_urls.each_with_index do |image_url, index|
   image_data = URI.open(image_url).read
   purple_bag.photos.attach(io: StringIO.new(image_data), filename: "purple-bag-#{index + 1}.png")
 end
