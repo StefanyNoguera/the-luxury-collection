@@ -26,3 +26,35 @@
   padding-top: 0.5rem;
   padding-left: 5.5rem;
 }
+
+.product-small-img img {
+  height: 13vh;
+  width: 10vh;
+  object-fit: cover;
+  cursor: pointer;
+  display: block;
+  opacity: .6;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.product-small-img {
+  float: left;
+}
+
+.product {
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  // position: absolute;
+}
+
+.img-container {
+  padding-left: 1em;
+}
+
+.flex {
+  display: flex;
+}

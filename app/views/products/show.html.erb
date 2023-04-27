@@ -1,22 +1,43 @@
 <div class="container-fluid">
   <%= render partial: "layouts/categories_banner" %>
 
+
   <div class="show-container">
-    <div class="padding-left">
-      <div class="flex-end stack-top">
-        <% if current_user.wishlists.where(product_id: @product.id).any? %>
-          <i class="fa-solid fa-heart heart"></i>
-        <% else %>
-          <%= link_to new_product_wishlist_path(@product) do %>
-            <i class="fa-regular fa-heart heart-1"></i>
-          <% end %>
+
+    <div class="padding-left product flex">
+      <div class="product-small-img">
+
+        <% @product.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, class: "pb-4", onclick: "myFunction(this)" %>
         <% end %>
       </div>
-      <%# <%= image_tag("https://res.cloudinary.com/dwgembu1s/image/upload/v1682555474/orange%20bag/o_bag_2_woh4vb.avif", class: "product-show pb-4") %>
-      <% @product.photos.limit(1).each do |photo| %>
-        <%= cl_image_tag photo.key, class: "product-show pb-4" %>
-      <% end %>
+
+      <div class="img-container">
+        <div class="flex-end stack-top">
+          <% if current_user.wishlists.where(product_id: @product.id).any? %>
+            <i class="fa-solid fa-heart heart"></i>
+          <% else %>
+            <%= link_to new_product_wishlist_path(@product) do %>
+              <i class="fa-regular fa-heart heart-1"></i>
+            <% end %>
+          <% end %>
+        </div>
+        <div>
+          <% @product.photos.limit(1).each do |photo| %>
+            <%= cl_image_tag photo.key, class: "product-show pb-4", id: "imageBox" %>
+          <% end %>
+        </div>
+
+      </div>
     </div>
+
+    <script>
+      function myFunction(smallImg)
+      {
+        var fullImg = document.getElementById("imageBox");
+        fullImg.src = smallImg.src;
+      }
+    </script>
 
 
 
