@@ -1,10 +1,19 @@
 <div class="container-fluid">
   <%= render partial: "layouts/categories_banner" %>
 
+
   <div class="show-container">
-    <div class="padding-left">
-      <div class="flex-end">
-        <% if user_signed_in? %>
+
+    <div class="padding-left product flex">
+      <div class="product-small-img">
+
+        <% @product.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, class: "pb-4", onclick: "myFunction(this)" %>
+        <% end %>
+      </div>
+
+      <div class="img-container">
+        <div class="flex-end stack-top">
           <% if current_user.wishlists.where(product_id: @product.id).any? %>
             <i class="fa-solid fa-heart heart"></i>
           <% else %>
@@ -12,14 +21,23 @@
               <i class="fa-regular fa-heart heart-1"></i>
             <% end %>
           <% end %>
-        <% else %>
-          <%= link_to new_user_session_path do %>
-            <i class="fa-regular fa-heart heart-1"></i>
+        </div>
+        <div>
+          <% @product.photos.limit(1).each do |photo| %>
+            <%= cl_image_tag photo.key, class: "product-show pb-4", id: "imageBox" %>
           <% end %>
-        <% end %>
+        </div>
+
       </div>
-      <%= image_tag("https://res.cloudinary.com/dwgembu1s/image/upload/v1682106503/qjwvqfzg6lbjeohxfhap.jpg", class: "product-show pb-4") %>
     </div>
+
+    <script>
+      function myFunction(smallImg)
+      {
+        var fullImg = document.getElementById("imageBox");
+        fullImg.src = smallImg.src;
+      }
+    </script>
 
 
 
@@ -40,20 +58,10 @@
         <h1 class="medium-font"><%= @product.condition.name %></h1>
       </div>
       <div class="pb-5">
-
-        <div data-controller="popover" data-popover-url-value="<%=user_card_path(@product.seller.user) %>">
-          This is where i'd like to put my popover
-          <span data-action="mouseenter->popover#show mouseleave->popover#hide"> <%= link_to "profile card", user_seller_path(@product.seller) %></span>
-        </div>
-
         <h1 class="small-font">by <%= link_to @product.seller.user.username, user_seller_path(@product.seller) %></h1>
       </div>
       <div>
-        <% if user_signed_in? %>
-          <p class="black-btn white-medium-font"><%= link_to "BUY NOW", new_product_order_path(@product)%></p>
-        <% else %>
-          <p class="black-btn white-medium-font"><%= link_to "BUY NOW", new_user_session_path %></p>
-        <% end %>
+        <p class="black-btn white-medium-font"><%= link_to "BUY NOW", new_product_order_path(@product)%></p>
       </div>
     </div>
   </div>
@@ -65,7 +73,7 @@
       <% @product.reviews.each do |review| %>
         <div class="card mb-3">
           <div class="card-header">
-            <p>@<%= review.user.username %></p>
+            <%= link_to review.user.username, user_path(review.user) %>
           </div>
           <div class="card-body">
             <h5 class="card-title">Rating: <%= review.rating %>/5</h5>
