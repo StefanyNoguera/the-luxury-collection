@@ -45,19 +45,19 @@
         <%= image_tag("https://res.cloudinary.com/dwgembu1s/image/upload/v1682105055/xl9vypie4vprtyvswlhp.jpg", class: "img-style-3") %>
         <p class="bold-medium-font pt-3 mb-2">BAGS</p>
         <p class="smaller-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-        <p class="small-link small-width"><%=link_to "SHOP NOW", products_path(category_id: Category.find_by(name: "Bags").id)%></p>
+        <p class="small-link small-width"><%=link_to "SHOP NOW", products_path(category_id: Category.find_by(name: "Bags"))%></p>
       </div>
       <div>
         <%= image_tag("https://res.cloudinary.com/dwgembu1s/image/upload/v1682105407/claw3rugewfpgiepj4fb.jpg", class: "img-style-3") %>
         <p class="bold-medium-font pt-3 mb-2">SHOES</p>
         <p class="smaller-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-        <p class="small-link small-width"><%=link_to "SHOP NOW", products_path(category_id: Category.find_by(name: "Shoes").id)%></p>
+        <p class="small-link small-width"><%=link_to "SHOP NOW", products_path(category_id: Category.find_by(name: "Shoes"))%></p>
       </div>
       <div>
         <%= image_tag("https://res.cloudinary.com/dwgembu1s/image/upload/v1682105520/otvorlmypxvwbipm42th.jpg", class: "img-style-3") %>
         <p class="bold-medium-font pt-3 mb-2">JEWELRY</p>
         <p class="smaller-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-        <p class="small-link small-width"><%=link_to "SHOP NOW", products_path(category_id: Category.find_by(name: "Jewelry").id)%></p>
+        <p class="small-link small-width"><%=link_to "SHOP NOW", products_path(category_id: Category.find_by(name: "Jewelry"))%></p>
       </div>
     </div>
   </div>
