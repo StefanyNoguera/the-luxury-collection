@@ -11,11 +11,10 @@ Rails.application.routes.draw do
   delete "products/:id", to: "products#destroy", as: :destroy_product
   resources :products, only: [:index, :show, :new, :create] do
     resources :orders, only: [:create, :new]
-    resources :wishlists, only: [:create, :new]
+    resources :wishlists, only: [:create, :new, :index]
     resources :reviews, only: [:create, :new]
   end
   resources :users, only: [:show] do
     resources :sellers, only: [:create, :new, :show]
   end
-  get "users/:id", to: "users#card", as: "user_card"
 end
