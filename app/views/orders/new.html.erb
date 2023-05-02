@@ -1,7 +1,19 @@
-<h1>New Order</h1>
+<div class="container-fluid">
+  <div class="centered-body">
+    <h1 class="big-font pb-3">New Order</h1>
 
-<%= form_for @order, url: product_orders_path(@product) do |f| %>
-  <%= f.hidden_field :product_id, value: @product.id %>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.submit "Place Order" %>
-<% end %>
+    <div class="centered">
+      <% @product.photos.limit(1).each do |photo| %>
+        <%= cl_image_tag photo.key, class: "img-order" %>
+      <% end %>
+      <p class="bold-small-font mb-2"><%= @product.name %></p>
+      <p class="smaller-font mb-3"><%= @product.brand %></p>
+    </div>
+
+    <%= form_for @order, url: product_orders_path(@product) do |f| %>
+      <%= f.hidden_field :product_id, value: @product.id %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.submit "Place Order", class: "white-medium-font log-in-button mb-3"  %>
+    <% end %>
+  </div>
+</div>
