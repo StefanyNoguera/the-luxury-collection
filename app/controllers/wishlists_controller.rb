@@ -17,9 +17,9 @@ class WishlistsController < ApplicationController
     @wishlist.product = @product
     @wishlist.user = current_user
     if current_user.wishlists.where(product: @product).exists?
-      redirect_to user_path(current_user), alert: "Product was already added to your wishlist."
+      redirect_to product_wishlists_path(current_user), alert: "Product was already added to your wishlist."
     elsif @wishlist.save
-      redirect_to user_path(current_user), notice: "Product added to your wishlist."
+      redirect_to product_wishlists_path(current_user), notice: "Product was successfully added to your wishlist."
     else
       render :new
     end
