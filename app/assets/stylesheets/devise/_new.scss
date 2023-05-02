@@ -1,5 +1,6 @@
 .centered-body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 80vh;
@@ -41,4 +42,9 @@
   flex-wrap: wrap;
 }
 
-
+.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
