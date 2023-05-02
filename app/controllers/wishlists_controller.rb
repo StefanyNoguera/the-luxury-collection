@@ -25,6 +25,12 @@ class WishlistsController < ApplicationController
     end
   end
 
+  def destroy
+    @wishlist = Wishlist.find(params[:id])
+    @wishlist.destroy
+    redirect_to product_wishlists_path(current_user), notice: "Product was successfully removed from your wishlist."
+  end
+
   private
 
   def wishlist_params

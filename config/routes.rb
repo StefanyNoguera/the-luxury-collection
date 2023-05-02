@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show, :new, :create] do
     resources :orders, only: [:create, :new]
     resources :wishlists, only: [:create, :new, :index]
+    delete "wishlists/:id", to: "wishlists#destroy", as: :destroy_wishlist
     resources :reviews, only: [:create, :new]
   end
   resources :users, only: [:show] do

@@ -18,6 +18,9 @@
 
             <div class="price-section">
               <p class="bold-smaller-font mb-3"><%=wishlist.product.price%>$</p>
+              <%= link_to product_destroy_wishlist_path(product_id: wishlist.product.id, id: wishlist.id), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} do %>
+                <i class="fa-solid fa-trash trash-icon"></i>
+              <% end %>
             </div>
           </div>
           <hr>
