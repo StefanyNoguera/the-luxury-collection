@@ -26,7 +26,11 @@
       <% @user.orders.each do |order| %>
         <div class="pt-2">
           <div class="order-card">
-            <div class="img-order"></div>
+            <div>
+            <% order.product.photos.limit(1).each do |photo| %>
+              <%= cl_image_tag photo.key, class: "img-order" %>
+            <% end %>
+            </div>
             <div class="info-section">
               <p class="bold-small-font mb-2"><%=link_to order.product.name, product_path(order.product)%></p>
               <p class="smaller-font mb-1"><%=link_to order.product.brand, product_path(order.product)%></p>
@@ -35,11 +39,12 @@
 
             <div class="price-section">
               <p class="bold-smaller-font mb-3"><%=order.product.price%>$</p>
-              <div class="link">
-                <% if order.product.reviews.where(user_id: current_user.id).empty? %>
-                  <%= link_to "Leave a review", new_product_review_path(order.product), class: "small-link" %>
-                <% end %>
-              </div>
+              <%# <div class="link"> %>
+                <%# <% if order.product.reviews.where(user_id: current_user.id).empty? %>
+                  <%# <%= link_to "Leave a review", new_product_review_path(order.product), class: "small-link" %>
+                <%# <% end %>
+              <%# </div> %>
+
             </div>
           </div>
           <hr>

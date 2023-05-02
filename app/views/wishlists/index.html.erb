@@ -1,0 +1,30 @@
+<div class="profile-container">
+  <h1 class="big-font">Your wishlist</h1>
+    <% if @wishlists.empty? %>
+      <p class="small-font">You don't have any products in your wishlist yet.</p>
+    <% else %>
+      <% @wishlists.each do |wishlist| %>
+        <div class="pt-2">
+          <div class="order-card">
+            <div>
+            <% wishlist.product.photos.limit(1).each do |photo| %>
+              <%= cl_image_tag photo.key, class: "img-order" %>
+            <% end %>
+            </div>
+            <div class="info-section">
+              <p class="bold-small-font mb-2"><%=link_to wishlist.product.name, product_path(wishlist.product)%></p>
+              <p class="smaller-font mb-1"><%=link_to wishlist.product.brand, product_path(wishlist.product)%></p>
+            </div>
+
+            <div class="price-section">
+              <p class="bold-smaller-font mb-3"><%=wishlist.product.price%>$</p>
+              <%= link_to product_destroy_wishlist_path(product_id: wishlist.product.id, id: wishlist.id), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} do %>
+                <i class="fa-solid fa-trash trash-icon"></i>
+              <% end %>
+            </div>
+          </div>
+          <hr>
+        </div>
+      <% end %>
+    <% end %>
+</div>

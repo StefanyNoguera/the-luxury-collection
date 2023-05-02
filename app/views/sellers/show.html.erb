@@ -4,8 +4,9 @@
       <div>
         <%= image_tag @seller.user.photo, class: "img-profile" %>
       </div>
-      <div>
+      <div class="pr">
         <h1 class="bold-medium-font">@<%= @seller.user.username %></h1>
+        <p class="smaller-font"><%= @seller.description %></p>
         <p class="bold-small-font">Joined: <%= @seller.created_at.strftime('%b %d %Y') %></p>
       </div>
     </div>
@@ -21,7 +22,9 @@
       <% @seller.products.each do |product| %>
         <div class="pt-2">
           <div class="order-card">
-            <div class="img-order"></div>
+            <% product.photos.limit(1).each do |photo| %>
+              <%= cl_image_tag photo.key, class: "img-order" %>
+            <% end %>
             <div class="info-section">
               <p class="bold-small-font mb-2"><%=link_to product.name, product_path(product)%></p>
               <p class="smaller-font mb-1"><%=link_to product.brand, product_path(product)%></p>

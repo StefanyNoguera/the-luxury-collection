@@ -1,7 +1,21 @@
-<h1>Add product to your wishlist</h1>
-
-<%= form_for @wishlist, url: product_wishlists_path(@product) do |f| %>
-  <%= f.hidden_field :product_id, value: @product.id %>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.submit "Add" %>
-<% end %>
+<div class="container-fluid">
+  <div class="centered-body">
+    <div>
+      <h1 class="big-font pb-3">Add to your wishlist</h1>
+    </div>
+    <div class="centered">
+      <% @product.photos.limit(1).each do |photo| %>
+        <%= cl_image_tag photo.key, class: "img-order" %>
+      <% end %>
+      <p class="bold-small-font mb-2"><%= @product.name %></p>
+      <p class="smaller-font mb-3"><%= @product.brand %></p>
+    </div>
+    <div>
+      <%= form_for @wishlist, url: product_wishlists_path(@product) do |f| %>
+        <%= f.hidden_field :product_id, value: @product.id %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.submit "Add", class: "white-medium-font log-in-button mb-3" %>
+      <% end %>
+    </div>
+  </div>
+</div>

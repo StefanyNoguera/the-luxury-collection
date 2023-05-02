@@ -1,4 +1,4 @@
-<h1>CREATE A SELLER ACOOUNT</h1>
+<h1>CREATE A SELLER ACCOUNT</h1>
 
 <%= form_for @seller, url: user_sellers_path(current_user) do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>

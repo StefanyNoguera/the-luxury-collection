@@ -1,6 +1,10 @@
 class WishlistsController < ApplicationController
-  before_action :set_product
+  before_action :set_product, only: [:new, :create]
   before_action :authenticate_user!
+
+  def index
+    @wishlists = current_user.wishlists
+  end
 
   def new
     @wishlist = Wishlist.new
@@ -13,12 +17,18 @@ class WishlistsController < ApplicationController
     @wishlist.product = @product
     @wishlist.user = current_user
     if current_user.wishlists.where(product: @product).exists?
-      redirect_to user_path(current_user), alert: "Product was already added to your wishlist."
+      redirect_to product_wishlists_path(current_user), alert: "Product was already added to your wishlist."
     elsif @wishlist.save
-      redirect_to user_path(current_user), notice: "Product added to your wishlist."
+      redirect_to product_wishlists_path(current_user), notice: "Product was successfully added to your wishlist."
     else
       render :new
     end
+  end
+
+  def destroy
+    @wishlist = Wishlist.find(params[:id])
+    @wishlist.destroy
+    redirect_to product_wishlists_path(current_user), notice: "Product was successfully removed from your wishlist."
   end
 
   private
