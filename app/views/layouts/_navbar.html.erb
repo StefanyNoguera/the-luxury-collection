@@ -14,14 +14,15 @@
           <%# <li class="nav-item active">
             <%= link_to "Profile", user_path(current_user), class: "nav-link small-font" %>
           <%# </li> %>
-          <li class="nav-item dropdown">
           <% if current_user.photo.attached? %>
-            <%= cl_image_tag(current_user.photo.key, class: "avatar dropdown-toggle profile-pic", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Your profile", user_path(current_user), class: "dropdown-item small-font" %>
-              <%= link_to "Wishlist", product_wishlists_path(current_user), class: "dropdown-item small-font" %>
-              <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item small-font" %>
-              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item small-font", data: {turbo_method: :delete} %>
+            <div class="dropdown show">
+              <%= cl_image_tag(current_user.photo.key, class: "avatar dropdown-toggle profile-pic", role:"button", id: "dropdownMenuLink", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <%= link_to "Your profile", user_path(current_user), class: "dropdown-item small-font" %>
+                <%= link_to "Wishlist", product_wishlists_path(current_user), class: "dropdown-item small-font" %>
+                <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item small-font" %>
+                <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item small-font", data: {turbo_method: :delete} %>
+              </div>
             </div>
           <% else %>
             <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
