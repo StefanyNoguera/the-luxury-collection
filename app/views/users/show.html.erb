@@ -2,7 +2,12 @@
   <div class="profile-banner">
     <div class="profile-img-info">
       <div>
-        <%= image_tag @user.photo, class: "img-profile" %>
+      <%# <%= image_tag @user.photo, class: "img-profile" %> 
+        <%if current_user.photo.attached?%>
+          <%= image_tag @user.photo, class: "img-profile" %>
+        <%else%>
+          <%= image_tag "avatar.png", class: "img-profile" %>
+        <%end%>
       </div>
       <div>
         <p class="big-font"><%= "#{@user.first_name} #{@user.last_name}" %></p>
